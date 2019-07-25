@@ -36,5 +36,17 @@ possessions <- c("bicycle", "radio", "television")
 possessions <- c(possessions, "moble_phone") #add another elemt to a vector
 possessions <- c("car",possessions)
 
+num_char <- c(1,2,3, "a")
+num_logical <- c(1,2,3, FALSE)
+char_logical <- c("a", "b", "c", TRUE)
+tricky <- c(1, 2, 3, "4")
 
+#Subsetting
 
+respondent_walltype[2]
+respondent_walltype[c(3,2)]   #Have to put into a vecor t/f use c
+
+more_respondent_walltype <- respondent_walltype[c(1,2,3,2,1)]
+
+no_membrs[c(TRUE, FALSE, TRUE, TRUE)]
+no_membrs[no_membrs > 5]
