@@ -23,3 +23,18 @@ area
 # e.g. b <- sqrt(x = a)
 
 round(3.14159, digits = 2)
+
+#Vectors
+no_membrs <- c(3, 7, 10, 6)
+length(no_membrs)
+
+respondent_walltype <- c("muddaub", "Burntbricks", "sunbricks")
+length(respondent_walltype)
+str(respondent_walltype)
+
+possessions <- c("bicycle", "radio", "television")
+possessions <- c(possessions, "moble_phone") #add another elemt to a vector
+possessions <- c("car",possessions)
+
+
+
