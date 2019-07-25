@@ -26,3 +26,4 @@ vignettes/*.pdf
 rsconnect/
 Data Downloads
 Data
+.DS_Store
