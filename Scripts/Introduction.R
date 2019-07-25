@@ -18,3 +18,8 @@ area_acres                 # print
 4.0 -> width
 area <- length * width
 area
+
+#Functions
+# e.g. b <- sqrt(x = a)
+
+round(3.14159, digits = 2)
