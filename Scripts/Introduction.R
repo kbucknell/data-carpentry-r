@@ -50,3 +50,11 @@ more_respondent_walltype <- respondent_walltype[c(1,2,3,2,1)]
 
 no_membrs[c(TRUE, FALSE, TRUE, TRUE)]
 no_membrs[no_membrs > 5]
+
+#combing logical statements
+no_membrs[no_membrs < 3 | no_membrs > 5]   # | is "or"
+no_membrs[no_membrs >= 7 & no_membrs ==3]  # == means equals, = is just a function symbol
+
+#searching in a vector e.g. does possessions include a bicycle
+possessions[possessions == "car" | possessions == "bicycle"]
+possessions %in% c("car", "bicycle")    #shortcut
