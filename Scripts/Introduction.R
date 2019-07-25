@@ -59,6 +59,8 @@ no_membrs[no_membrs >= 7 & no_membrs ==3]  # == means equals, = is just a functi
 possessions[possessions == "car" | possessions == "bicycle"]
 possessions %in% c("car", "bicycle")    #shortcut
 
+# Missing data
+
 rooms <- c(2,1,1,NA,4)
 mean(rooms)
 max(rooms)
@@ -68,5 +70,7 @@ mean(rooms, na.rm = TRUE)
 !is.na(rooms)
 
 rooms[!is.na(rooms)]
+
+# FRIDAY
 
 
