@@ -60,4 +60,18 @@ interviews %>%
             max_membrs = max(no_membrs), 
             n = n())
 
+#Table - for each 'observational unit', which varies...
+##Spread function
+#add a dummy column to the dataset, need to give column names as well as values
+interviews_spread <- interviews %>%
+  mutate(wall_type_logical = TRUE) %>%
+  spread(key=respondent_wall_type, value = wall_type_logical, fill = FALSE) 
 
+view(interviews_spread)
+
+#go back the other way
+interviews_gather <- interviews_spread %>%
+  gather(key = respondent_wall_type, value = "wall_type_logical", burntbricks:sunbricks) %>%
+  filter(wall_type_logical) %>%
+  select(-wall_type_logical)
+ view(interviews_gather)
