@@ -27,3 +27,7 @@ rsconnect/
 Data Downloads
 Data
 .DS_Store
+# Don't track data files
+data/*.csv
+data/*.xlsx
+data/*.rds
