@@ -70,3 +70,20 @@ as.numeric(as.character(year_fct)) #this gives you years as numbers again
 levels(year_fct)[year_fct]
 as.numeric(levels(year_fct))[year_fct]
 table(year_fct) #tells you how many of each years there are
+
+#Affect/ conflicts
+affect_conflicts <- interviews$affect_conflicts
+affect_conflicts <- as.factor(affect_conflicts)  #convert to factor
+plot(affect_conflicts) #creates chart, but none of the missing data is shown
+
+affect_conflicts <- interviews$affect_conflicts
+affect_conflicts[is.na(affect_conflicts)] <- "undetermined" #replaces missing data with undetermined
+affect_conflicts <- as.factor(affect_conflicts)  #convert to factor again
+plot(affect_conflicts) #now plot shows undetermined data
+
+#Exercise
+levels(affect_conflicts)[2] <-"more than once"
+affect_conflicts <- factor(affect_conflicts, levels = c("never", "once", "more than once", 
+                                                        "frequently", "undetermined"))
+plot(affect_conflicts)
+
