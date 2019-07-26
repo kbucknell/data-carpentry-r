@@ -20,3 +20,24 @@ interviews %>% select(village, no_membrs, years_liv) %>%
 interviews %>%
   filter(memb_assoc == "yes") %>%
   select(affect_conflicts, liv_count, no_meals) #need to do the filtering first then select
+
+#Afternoon session
+interviews %>%
+  mutate(people_per_room = no_membrs / rooms)
+
+interviews_ppl_room <- interviews %>%
+  filter(memb_assoc == "yes") %>%
+         mutate(people_per_room = no_membrs / rooms)
+
+view(interviews_ppl_room)
+
+#Exercise
+int_total_meals <- interviews %>%
+  mutate(total_meals = no_membrs * no_meals) %>%
+  select(village, total_meals) %>%
+  filter(total_meals > 20)
+
+
+
+
+
