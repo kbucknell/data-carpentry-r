@@ -75,3 +75,5 @@ interviews_gather <- interviews_spread %>%
   filter(wall_type_logical) %>%
   select(-wall_type_logical)
  view(interviews_gather)
+
+ 
