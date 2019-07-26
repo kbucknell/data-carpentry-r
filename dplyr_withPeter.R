@@ -32,12 +32,32 @@ interviews_ppl_room <- interviews %>%
 view(interviews_ppl_room)
 
 #Exercise
-int_total_meals <- interviews %>%
+total_meals <- interviews %>%
   mutate(total_meals = no_membrs * no_meals) %>%
   select(village, total_meals) %>%
   filter(total_meals > 20)
 
+#split, apply, combine
+interviews %>%
+  group_by(village) %>%
+  summarize(mean_no_membrs = mean(no_membrs))   #summarise produces a single number eg. mean rather than a new variable
 
+interviews %>%
+  filter(!is.na(memb_assoc)) %>%
+  group_by(village, memb_assoc) %>%
+  summarise(mean_no_membrs = mean(no_membrs),
+          min_membrs = min(no_membrs)) %>%
+  arrange(desc(min_membrs)) #desc = descending, so reverses order
 
+#count function
+interviews %>% count(village, sort=TRUE) #ie. counts the number of responses, sorts largest to smallest
+
+#Exercise
+interviews %>%
+  group_by(village) %>%
+  summarize(mean_no_membrs = mean(no_membrs), 
+            min_membrs = min(no_membrs), 
+            max_membrs = max(no_membrs), 
+            n = n())
 
 
