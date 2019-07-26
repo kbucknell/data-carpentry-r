@@ -19,4 +19,4 @@ interviews %>% select(village, no_membrs, years_liv) %>%
 #Piping Exercise
 interviews %>%
   filter(memb_assoc == "yes") %>%
-  select(affect_conflicts, liv_count, no_meals)
+  select(affect_conflicts, liv_count, no_meals) #need to do the filtering first then select
